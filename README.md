@@ -1,2 +1,2 @@
 # Youtube_Downloader
-利用TkinterGUI的框架，做成的YouTube影片下載器
+利用Tkinter GUI的框架，做成的YouTube影片下載器
