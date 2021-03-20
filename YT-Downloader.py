@@ -14,7 +14,6 @@ YouTube 影片下載工具
 def choose():
     Result.set("You choose {} Video".format(Quality_choice.get()))  # item_1 item_2 ==> text
     
-    
 def DL_Video():   
     
     try :
@@ -34,11 +33,9 @@ def DL_Video():
         print("Web Address Error")
         Result.set("Youtube Web Address Error\nTry Again !")
                    
-                   
 from pytube import YouTube
 import tkinter as tk
 import os
-
 
 '''major window'''
 win = tk.Tk()
@@ -50,8 +47,6 @@ YT_url =  tk.StringVar()   # youtbe web address
 DL_path = tk.StringVar()   # Download path
 Quality_choice = tk.StringVar()   # Video Quality
 Result = tk.StringVar()           # Show Result
-
-
 
 '''Frame 1'''
 frame_1 = tk.Frame(win)
@@ -67,14 +62,12 @@ Input_txt_1.grid(row = 0, column = 1, padx=5, pady=5)
 frame_2 = tk.Frame(win)
 frame_2.pack()
 
-
 Path_txt = tk.Label(frame_2, text ="Download Path :")
 Path_txt.grid(row = 0, column = 0, padx=5, pady=5)
 
 DL_path.set("{}".format(os.getcwd()))        # Default download path
 Input_txt_2 = tk.Entry(frame_2, textvariable = DL_path, width=40) 
 Input_txt_2.grid(row = 0, column = 1, padx=5, pady=5)
-
 
 ''' Frame 3'''
 frame_3 = tk.Frame(win)
@@ -97,7 +90,6 @@ frame_5.pack()
 Button_txt = tk.Button(frame_5, text ="Start Download", command=DL_Video)
 Button_txt.grid(row = 0, column = 0, padx=5, pady=5)
 
-
 '''Frame 6'''
 '''show result'''
 frame_6 = tk.Frame(win)
@@ -109,6 +101,5 @@ Result_txt.grid(row = 0, column = 0, padx=5, pady=5)
 '''Select item_1 for default value'''
 item_1.select()
 choose()
-
 
 win.mainloop()
