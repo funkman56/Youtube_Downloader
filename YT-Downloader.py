@@ -16,16 +16,28 @@ def choose():
     
 def DL_Video():   
     
+    PathDir = DL_path.get()
+    
+    if PathDir == "{}".format(os.getcwd()):
+        print("\n====== Download Path ======\n\n{}".format(PathDir))
+    
+    else :
+        
+        print("\n====== Download Path ======\n\n{}".format(PathDir))
+            
+        if not os.path.isdir(PathDir) :
+            os.mkdir(PathDir)
+        
     try :
         print("\n==== Video Downloading ====\n")
         yt = YouTube("{}".format(YT_url.get()))
         print(yt.title)
         
         if Quality_choice.get() == "Highest Quality" :
-            yt.streams.get_highest_resolution().download()
+            yt.streams.get_highest_resolution().download(PathDir)
         
         elif Quality_choice.get() == "Lowest Quality" :
-            yt.streams.get_lowest_resolution().download()
+            yt.streams.get_lowest_resolution().download(PathDir)
             
         Result.set("{}\nDownload Completed".format(yt.title))
     
